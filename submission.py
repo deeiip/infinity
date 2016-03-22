@@ -97,7 +97,6 @@ def submission():
             print('Miss {0}'.format(idx))
         fo.writerow(out)
     f.close()
-
     print('Done.')
 
 submission()
