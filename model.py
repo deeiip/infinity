@@ -8,6 +8,8 @@ from keras.regularizers import l2
 from keras import backend as K
 import keras
 
+def r_m_s_e(y_true, y_pred):
+    return K.sqrt(K.mean(K.square(y_pred - y_true), axis=-1))
 
 def center_normalize(x):
     """
@@ -53,7 +55,7 @@ def get_model():
     model.add(Dense(1))
 
     adam = Adam(lr=0.0001)
-    model.compile(optimizer=adam, loss='rmse')
+    model.compile(optimizer=adam, loss=r_m_s_e)
     return model
 
 def get_model(drop_out_1=0.25, drop_out_2=0.25, drop_out_3=0.25, drop_out_4=0.5):
@@ -93,5 +95,5 @@ def get_model(drop_out_1=0.25, drop_out_2=0.25, drop_out_3=0.25, drop_out_4=0.5)
     model.add(Dense(1))
 
     adam = Adam(lr=0.0001)
-    model.compile(optimizer=adam, loss='rmse')
+    model.compile(optimizer=adam, loss=r_m_s_e)
     return model
