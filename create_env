@@ -13,6 +13,7 @@ cd Theano-master
 python setup.py install
 cd ..
 wget https://github.com/fchollet/keras/archive/master.zip
+unzip master.zip
 cd keras-msater
 python setup.py install
 cd ..
