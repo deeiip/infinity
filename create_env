@@ -4,8 +4,8 @@ pip install numpy
 pip install scipy
 pip install pydicom
 pip install scikit-image
-conda install h5py
-conda install matplotlib
+conda install -y h5py
+conda install -y matplotlib
 wget https://github.com/Theano/Theano/archive/master.zip
 unzip master.zip
 rm master.zip
