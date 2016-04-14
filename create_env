@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+pip install numpy
+pip install scipy
+pip install pydicom
+pip install scikit-image
+conda install h5py
+conda install matplotlib
+wget https://github.com/Theano/Theano/archive/master.zip
+unzip master.zip
+rm master.zip
+cd Theano-master
+python setup.py install
+cd ..
+wget https://github.com/fchollet/keras/archive/master.zip
+cd keras-msater
+python setup.py install
+cd ..
